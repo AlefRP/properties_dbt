@@ -1,0 +1,25 @@
+version: 2
+models:
+  - name: stg_properties
+    description: The 'stg_properties' dbt model retrieves distinct records from the 'properties' table in the 'taxes' schema. It selects the fields 'DISTRICT_CODE', 'SECTOR_CODE', 'BLOCK_CODE', 'LOT_NUMBER', and 'UNIT' from the table and filters out any records where 'DISTRICT_CODE' is null. This model serves as a staging table for further data processing and analysis related to real estate properties.
+    columns:
+      - name: DISTRICT_CODE
+        tests:
+          - not_null
+        description: The 'DISTRICT_CODE' column represents the code for the district where the property is located.
+      - name: SECTOR_CODE
+        tests:
+          - not_null
+        description: The 'SECTOR_CODE' column indicates the sector code within the district.
+      - name: BLOCK_CODE
+        tests:
+          - not_null
+        description: The 'BLOCK_CODE' column denotes the code for the specific block within the sector.
+      - name: LOT_NUMBER
+        tests:
+          - not_null
+        description: The 'LOT_NUMBER' column specifies the lot number of the property within the block.
+      - name: UNIT
+        tests:
+          - not_null
+        description: The 'UNIT' column refers to the unit number of the property, providing further granularity within a lot.
