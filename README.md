@@ -1,4 +1,4 @@
-# City Properties Data Warehouse UsingDBT
+# City Properties Data Warehouse Using DBT
 
 ## Introduction
 
